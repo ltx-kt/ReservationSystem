@@ -1,9 +1,15 @@
 import React, {useState, useEffect} from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import "./navigation.css";
 import {Button} from './button';
 
 function Navigation (){
+    const navigate = useNavigate();
+
+    const navigateSignIn = () => {
+        navigate('/signin');
+      };
+
     const [click, setClick] = useState(false);
     const[button, setButton] = useState(true);
 
@@ -49,7 +55,7 @@ function Navigation (){
                         </Link>
                     </li>
                 </ul>
-                {button && <Button buttonStyle='button-outline'>SIGN IN</Button>}
+                <Button onClick={navigateSignIn} buttonStyle='button-outline'>SIGN IN</Button>
            </div>
         </nav>
         </>

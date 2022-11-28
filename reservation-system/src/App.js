@@ -11,6 +11,9 @@ function App() {
       <Navigation />
         <Routes>
           <Route exact path="/" element={<Home/>}></Route>
+          <Route path="/signin" element={<h1>Sign In</h1>}></Route>
+          <Route path="/reserve" element={<h1>Reserve</h1>}></Route>
+          <Route path="/register" element={<h1>Register</h1>}></Route>
         </Routes>
     </Router>
     
