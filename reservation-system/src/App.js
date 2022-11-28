@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Navigation from './components/navigation';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-
+import Home from './components/pages/Home';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
     <Router>
       <Navigation />
         <Routes>
-          <Route path='/' exact />
+          <Route exact path="/" element={<Home/>}></Route>
         </Routes>
     </Router>
     
