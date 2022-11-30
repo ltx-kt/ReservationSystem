@@ -18,7 +18,7 @@ function DisplaySection () {
 
     return (
         <div className="display-container">
-            <video src="/videos/resturant-1.mp4" autoPlay loop muted />
+            {/* <video src="/videos/resturant-1.mp4" autoPlay loop muted /> */}
             <h1>Welcome to XXXXX</h1>
             <p> </p>
             <div className="display-buttons">
