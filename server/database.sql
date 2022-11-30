@@ -7,9 +7,10 @@ DROP TABLE IF EXISTS todo;
 
 CREATE TABLE accounts(
     userid SERIAL PRIMARY KEY,
+    first_name varchar(255),
+    last_name varchar(255),
     email VARCHAR(255),
     password VARCHAR(255)
-    -- PRIMARY KEY(userid)
 );
 
 CREATE TABLE dining_tables (
