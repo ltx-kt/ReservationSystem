@@ -47,6 +47,19 @@ app.get('/users', async (req, res) => {
     }
 });
 
+app.post('/api/insert', async (req, res) => {
+    const { first_name, last_name, email, pwd, cpwd } = req.body;
+    console.log(req.body);
+    try {
+        const insertUser = await pool.query("INSERT INTO accounts (first_name, last_name, email, password) VALUES ($1, $2, $3, $4)",
+        [first_name.toLowerCase(), last_name.toLowerCase(), email.toLowerCase(), pwd])
+        res.json(insertUser);
+
+    } catch (err) {
+        console.error(err.message);
+    }
+});
+
 app.get('/api/getaccount/:email&:pass', async (req, res) => {
     try {
         const { email, pass } = req.params;
@@ -60,6 +73,21 @@ app.get('/api/getaccount/:email&:pass', async (req, res) => {
         console.error(err.message);
     } 
 });
+
+app.get('/api/getaccount/:email', async (req, res) => {
+    try {
+        const { email } = req.params;
+        const user = await pool.query("SELECT * FROM accounts WHERE email = $1", [email]);
+        console.log(email);
+        res.json(user);
+        if (user.rows.length === 0) {
+            return res.status(401).json("Invalid Credential");
+          }
+    } catch (err) {
+        console.error(err.message);
+    } 
+});
+
 
 const port = 5001
 app.listen(port, () => {

@@ -19,7 +19,7 @@ function LoginForm() {
         e.preventDefault();
         const errors = {}
         try {
-            const response = await fetch(`http://localhost:5001/api/getaccount/${formValues.email}&${formValues.password}`,
+            const response = await fetch(`http://localhost:5001/api/getaccount/${formValues.email.toLowerCase()}&${formValues.password}`,
             );
             const jsonData = await response.json();
             console.log(jsonData);
