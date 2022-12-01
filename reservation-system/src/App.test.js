@@ -11,6 +11,7 @@ test('renders guest registation button', () =>{
   const linkElement = screen.getByText(/Continue as Guest/i)
   expect(linkElement).toBeInTheDocument();
 });
+
 test('renders signin button', () =>{
   render(<App/>)
   const linkElement = screen.getByText(/Sign In/i);
