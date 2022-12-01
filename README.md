@@ -24,6 +24,7 @@ Reservation system for restaurant
 <img src="AppImages/6.png" width=800><br>
 
 - Filling in information <br>
+- NOTE checkmark for same mailing and billing addresses <br>
 <img src="AppImages/7.png" width=800><br>
 
 - Succusful reservation will display "Reservation Successful for" followed by the user's first and last name<br>
@@ -34,8 +35,9 @@ Reservation system for restaurant
 - Guest reservation form will display "Reservation Form for Guest" <br>
 <img src="AppImages/10.png" width=800><br>
 
-- Filling out form demo" <br>
+- Filling out form demo <br>
 <img src="AppImages/11.png" width=800><br>
+- NOTE different mailing and billing addresses <br>
 <img src="AppImages/12.png" width=800><br>
 
 - Succusful guest reservation will display "Reservation Successful for Guest:" followed by their first and last name <br>
@@ -45,6 +47,12 @@ Reservation system for restaurant
 - Creating new account <br>
 <img src="AppImages/15.png" width=800><br>
 <img src="AppImages/16.png" width=800><br>
+
+- Other Error Handlings <br>
+<img src="AppImages/ev1.png" width=800><br>
+<img src="AppImages/ev3.png" width=800><br>
+<img src="AppImages/ev2.png" width=800><br>
+
 
 
 
