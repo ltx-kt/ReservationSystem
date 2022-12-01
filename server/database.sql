@@ -56,6 +56,16 @@ CREATE TABLE reservations(
 	        ON DELETE CASCADE
 );
 
+
+-- Using these for demo
+CREATE TABLE accounts(
+    userid SERIAL PRIMARY KEY,
+    first_name varchar(255),
+    last_name varchar(255),
+    email VARCHAR(255),
+    password VARCHAR(255)
+);
+
 CREATE TABLE reservations(
     time_slot VARCHAR(250),
     first_name VARCHAR(250) NOT NULL,
@@ -65,5 +75,5 @@ CREATE TABLE reservations(
     phone VARCHAR(250) NOT NULL,
     mailing_address VARCHAR(250) NOT NULL,
     billing_address VARCHAR(250) NOT NULL,
-    preferred_payment VARCHAR(250) NOT NULL,
+    preferred_payment VARCHAR(250) NOT NULL
 );

@@ -77,7 +77,7 @@ function LoginForm({setName, setLName, setFName}) {
     return (
         <>
             {/* <video src="/videos/resturant-1.mp4" autoPlay loop muted /> */}
-            <pre>{JSON.stringify(formValues)}</pre>
+            {/* <pre>{JSON.stringify(formValues)}</pre> */}
             <div class="loginwrapper">
                 <form class="form-right" onSubmit={handleSubmit}>
                     <h2 class="text-uppercase">Sign In</h2>
