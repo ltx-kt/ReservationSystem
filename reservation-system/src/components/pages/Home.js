@@ -2,11 +2,11 @@ import React from 'react';
 import '../../App.css';
 import DisplaySection from '../DisplaySection';
 
-function Home () {
+function Home ({setName, setLName, setFName}) {
     return (
         
         <>
-            <DisplaySection />
+            <DisplaySection setName= {setName} setLName = {setLName} setFName = {setFName}/>
         </>
     )
 }

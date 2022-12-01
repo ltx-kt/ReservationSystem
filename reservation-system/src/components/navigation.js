@@ -10,6 +10,15 @@ function Navigation (){
         navigate('/signin');
       };
 
+    const navigateRegister = () => {
+        navigate('/signin');
+        };
+    
+    const navigateHome = () => {
+        navigate('/');
+        };
+
+
     const [click, setClick] = useState(false);
     const[button, setButton] = useState(true);
 
@@ -39,23 +48,27 @@ function Navigation (){
                     <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
                 </div>
                 <ul className={click ? 'navigation-menu active' : 'nav-menu'}>
-                    <li className='nav-item'>
+                    {/* <li className='nav-item'>
                         <Link to='/' className='navigation-links' onClick={closeMobileMenu}>
-                            Home
+                            Make A Reservation Today
                         </Link>
-                    </li>
-                    <li className='nav-item'>
+                    </li> */}
+                    {/* <li className='nav-item'>
                         <Link to='/signin' className='navigation-links-mobile' onClick={closeMobileMenu}>
                             Sign in/Register
                         </Link>
-                    </li>
-                    <li className='nav-item'>
+                    </li> */}
+                    {/* <li className='nav-item'>
                         <Link to='/reserve' className='navigation-links' onClick={closeMobileMenu}>
                             Make A Reservation
                         </Link>
-                    </li>
+                    </li> */}
                 </ul>
-                <Button onClick={navigateSignIn} buttonStyle='button-outline'>SIGN IN</Button>
+                {/* <Button onClick={navigateRegister} buttonStyle='button-outline'>REGISTER</Button> */}
+                {/* <Button onClick={navigateSignIn} buttonStyle='button-outline'>SIGN IN</Button> */}
+                {/* <Button onClick={navigateHome} buttonStyle='button-outline'>RESERVE NOW</Button> */}
+
+
            </div>
         </nav>
         </>

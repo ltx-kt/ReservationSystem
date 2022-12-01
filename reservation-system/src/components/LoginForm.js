@@ -1,12 +1,21 @@
 import { React, useState, useEffect } from "react";
+import { Link, useLocation, useNavigate} from "react-router-dom";
 import "./LoginForm.css";
 // const {Client} = require("pg");
 
-function LoginForm() {
+function LoginForm({setName, setLName, setFName}) {
+    const navigate = useNavigate();
+    const location = useLocation();
     const initialvalues = { email: "", password: "" };
     const [formValues, setFormValues] = useState(initialvalues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
+    // const setBack = () => {
+    //     setName("Guest");
+    //     setLName("Guest");
+    //     setFName("Guest");
+    //     navigate('/reserve');
+    // };
 
 
     const handleChange = (e) => {
@@ -29,14 +38,25 @@ function LoginForm() {
             }
             else {
                 setFormErrors({});
+                setName(jsonData['rows'][0]['email']);
+                setLName(jsonData['rows'][0]['last_name']);
+                setFName(jsonData['rows'][0]['first_name']);
+
+
+                // navigate('/reserve')
+
             }
         } catch (err) {
             console.error(err.message);
         }
-        setFormValues(initialvalues);
+        // setFormValues(initialvalues);
         setIsSubmit(true);
+        if (Object.keys(errors).length === 0) {
+            console.log("asdasdasd", formValues);
+            // setName(formValues.email);
+            navigate('/reserve');
+        }
     };
-
     const validate = (values) => {
         const errors = {};
             errors.incorrect = "Email or password is incorrect.";
@@ -45,8 +65,12 @@ function LoginForm() {
 
     useEffect(() => {
         console.log(formErrors);
+        // console.log("asdasdasd", formValues);
         if (Object.keys(formErrors).length === 0 && isSubmit) {
-            console.log(formValues);
+            console.log("asdasdasd", formValues);
+            // const gg = formValues;
+            setFormValues(initialvalues);
+
         }
     }, [formErrors]);
 
@@ -84,9 +108,9 @@ function LoginForm() {
                         />
                     </div>
                     <div class="form-field">
-                        <input type="submit" value="Login" class="register" name="login" />
+                        <input type="submit" value="Login" class="register" name="login"/>
                         <div class="mb-3">
-                            <div>Don't have an account?   <a href="/register">Register</a>
+                            <div>Don't have an account?   <Link to="/register">Register</Link>
                             </div>
                         </div>
                     </div>

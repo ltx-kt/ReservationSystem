@@ -2,10 +2,10 @@ import React from 'react';
 // import '../../App.css';
 import LoginForm from '../LoginForm';
 
-function Login() {
+function Login({setName, setLName, setFName}) {
     return (
         <>
-            <LoginForm/>
+            <LoginForm setName = {setName} setLName = {setLName} setFName = {setFName}/>
         </>
     );
 }
