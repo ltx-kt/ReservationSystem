@@ -51,7 +51,6 @@ Reservation system for restaurant
 - Other Error Handlings <br>
 <img src="AppImages/ev1.png" width=800><br>
 <img src="AppImages/ev3.png" width=800><br>
-<img src="AppImages/ev2.png" width=800><br>
 
 
 
