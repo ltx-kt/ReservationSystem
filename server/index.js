@@ -60,6 +60,19 @@ app.post('/api/insert', async (req, res) => {
     }
 });
 
+app.post('/api/reserve', async (req, res) => {
+    const { first_name, last_name, email, phone, date, guest, badd, madd, pay, cb, ig} = req.body;
+    console.log(req.body);
+    try {
+        const insertUser = await pool.query("INSERT INTO reservations (time_slot, first_name, last_name, num_seats, email, phone, mailing_address, billing_address, preferred_payment) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)",
+        [date.toString(), first_name.toLowerCase(), last_name.toLowerCase(), guest, email.toLowerCase(), phone, madd, badd==""? madd:badd, pay])
+        res.json(insertUser);
+
+    } catch (err) {
+        console.error(err.message);
+    }
+});
+
 app.get('/api/getaccount/:email&:pass', async (req, res) => {
     try {
         const { email, pass } = req.params;

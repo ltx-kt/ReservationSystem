@@ -10,6 +10,7 @@ function RegisterForm() {
     const [formValues, setFormValues] = useState(initialvalues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
+    const [isSuccess, setSuccess] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -51,7 +52,7 @@ function RegisterForm() {
             console.error(err.message);
         }
         setFormErrors(errors);
-        setFormValues(initialvalues);
+        // setFormValues(initialvalues);
         setIsSubmit(true);
     };
 
@@ -65,16 +66,17 @@ function RegisterForm() {
         console.log(formErrors);
         if (Object.keys(formErrors).length === 0 && isSubmit) {
             console.log(formValues);
+            setFormValues(initialvalues);
+            setSuccess(true);
         }
     }, [formErrors]);
-
 
     return (
         <>
             {/* <video src="/videos/resturant-1.mp4" autoPlay loop muted /> */}
             <div class="wrapper">
                 <form class="form-right" onSubmit={handleSubmit}>
-                    <h2 class="text-uppercase">Registration form</h2>
+                    <h2 class="text-uppercase">Registration {isSuccess? "success! You can now Log in.":"form"}</h2>
                     <div class="row">
                         <div class="col-sm-6 mb-3">
                             <label>First Name</label>

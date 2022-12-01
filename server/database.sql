@@ -37,3 +37,33 @@ CREATE TABLE registered_users(
 	        REFERENCES accounts(userid)
 	        ON DELETE CASCADE
 );
+
+CREATE TABLE reservations(
+    first_name VARCHAR(250) NOT NULL,
+    last_name VARCHAR(250) NOT NULL,
+    is_guest BOOLEAN NOT NULL,
+    num_seats VARCHAR(250) NOT NULL,
+    email VARCHAR(250) NOT NULL,
+    phone VARCHAR(250) NOT NULL,
+    mailing_address VARCHAR(250) NOT NULL,
+    billing_address VARCHAR(250) NOT NULL,
+    earned_points int NOT NULL,
+    preferred_payment VARCHAR(250) NOT NULL,
+    userid INT,
+    CONSTRAINT fk_accounts
+        FOREIGN KEY(userid) 
+	        REFERENCES accounts(userid)
+	        ON DELETE CASCADE
+);
+
+CREATE TABLE reservations(
+    time_slot VARCHAR(250),
+    first_name VARCHAR(250) NOT NULL,
+    last_name VARCHAR(250) NOT NULL,
+    num_seats VARCHAR(250) NOT NULL,
+    email VARCHAR(250) NOT NULL,
+    phone VARCHAR(250) NOT NULL,
+    mailing_address VARCHAR(250) NOT NULL,
+    billing_address VARCHAR(250) NOT NULL,
+    preferred_payment VARCHAR(250) NOT NULL,
+);
